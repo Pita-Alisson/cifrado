@@ -16,29 +16,38 @@
 }
 
 body{
-    margin: 5;
+    margin: 1;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     font-family: var(--font-main);
-    background: var(--color-gradient), url(assets/letters.gif) no-repeat center center fixed;
+    background: var(--color-gradient), url(../assets/gif/fondoRojo.mp4) no-repeat center center fixed;
     background-size: cover;
     color: var(--color-white);
 }
 
-header, footer{
+header{
     padding: 0.5rem 1rem;
     background-color: var(--color-main);
+    display:flex;
+    align-items:center;
+
+    
 }
 
 footer{
+    padding: 0.5rem 1rem;
+    background-color: var(--color-main);
     text-align: center;
 }
 
 h1{
     font-size: 6 rem;
     text-align: center;
+    justify-content: center;
+    align-items:center;
+  
 }
 
 main{
