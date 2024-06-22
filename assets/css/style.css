@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;700&family=Roboto:wght@300;400&display=swap');
 
 :root{
-    --color-main: rgb(243, 14, 140);
+    --color-main: rgb(59, 3, 55);
     --color-secondary: rgb(238, 51, 182);
     --color-placeholder-main: #D3CCE3;
     --color-placeholder-secondary: #E9E4F0;
@@ -41,6 +41,11 @@ footer{
     background-color: var(--color-main);
     text-align: center;
 }
+/* solo de prueba el codigo de html, body */
+html, body {
+    overflow: hidden;
+    height: 100%;
+  }  
 
 h1{
     font-size: 6 rem;
