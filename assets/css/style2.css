@@ -1,19 +1,47 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;700&family=Roboto:wght@300;400&display=swap');
 
+:root{
+    --color-main: rgb(59, 3, 55);
+    --color-secondary: rgb(238, 51, 182);
+    --color-placeholder-main: #D3CCE3;
+    --color-placeholder-secondary: #E9E4F0;
+    --color-white: #fff;
+    --color-gradient: linear-gradient( 91.7deg, rgba(50,25,79,0.75) -4.3%, rgba(33, 23, 82,0.75) 101.8% );
+    --font-main: 'Comfortaa', cursive;
+    --font-secondary: 'Roboto', sans-serif;
+}
 
-body {
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 1;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: var(--font-main);
+    background: var(--color-gradient), url(/assets/gif/rosado.gif) no-repeat center center fixed;
+    background-size: cover;
+    color: var(--color-white);
+}
+
+/* body {
+
     margin: 0;
     padding: 25px;
     font-family: Arial, sans-serif;
     background-image: url('https://64.media.tumblr.com/cc79293129b2745cf953243550b45f2c/tumblr_pa4qv3Jssg1wd3jimo5_540.gifv');
     background-size: cover;
     position: relative;
-    padding-bottom: 1em;
+    padding-bottom: 1em; */
     /* ver si borro ese position */
     /* position: relative; */
 
-}
+/* } */
+
 html, body {
     overflow: hidden;
     height: 100%;
@@ -55,4 +83,25 @@ footer{
     position: absolute;
     bottom: 0;
     width: 100%;
+}
+
+
+/**********boton******/
+#btn{
+    font-family: var(--font-main);
+    /* font-weight: 700; */
+    /* font-size: 0.75rem; */
+    cursor: pointer;
+    /* padding: 1rem 1rem; */
+    border-radius: 10px;
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+    border: none;
+    margin-bottom: 0.5rem;
+    /* width: 100%; */
+}
+
+#btn:hover{
+    background-color: var(--color-secondary);
+    box-shadow: 0 0 0.5rem var(--color-secondary);
 }

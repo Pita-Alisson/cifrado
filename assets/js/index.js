@@ -22,18 +22,19 @@ document.addEventListener("DOMContentLoaded", function() {
     }
    
 })
-    // Manejo de la página de trivia.html
-    // var triviaSaludo = document.getElementById('triviaSaludo');
-    // if (triviaSaludo) {
-    //     var nickname = localStorage.getItem('nickname');
-    //     if (nickname) {
-    //         // Mostrar un saludo personalizado con el nickname
-    //         triviaSaludo.textContent = 'Bienvenido a la Trivia, ' + nickname + ' !'+'Donde compites con el tiempo y  conoces los:';
-    //     } else {
-    //         // Redirigir al usuario a la página de registro si no se ha registrado
-    //         window.location.href = '../index.html';
-    //     }
-    // }
+    //Manejo de la página de trivia.html
+    var Saludo = document.getElementById('bienvenida');
+    if (Saludo) {
+        var nickname = localStorage.getItem('nickname');
+
+        if (nickname) {
+            // Mostrar un saludo personalizado con el nickname
+            Saludo.textContent = 'Bienvenid@ ' + nickname ;
+        } else {
+            // Redirigir al usuario a la página de registro si no se ha registrado
+            window.location.href = '../index.html';
+        }
+    }
 
     // Limpiar nickname
     // var limpiarNicknameBtn = document.getElementById('limpiarNickname');
@@ -49,7 +50,8 @@ document.addEventListener("DOMContentLoaded", function() {
 //Selectors
 const txtMsg = document.getElementById("msg");
 const count = document.getElementById("counter");
-const offset = document.getElementById("offset");
+
+// const offset = document.getElementById('offset');
 const btnCipher = document.getElementById("cipher");
 const btnDecipher = document.getElementById("decipher");
 const lblMsgResult = document.getElementById("lblMsgResult");
@@ -69,11 +71,12 @@ txtMsg.addEventListener("keyup", () =>{
 btnCipher.addEventListener("click",()=>{
     if(txtMsg.value == ""){
         alert("Ingresa tu mensaje secreto.");
-    }else if(offset.value == ""){
-        alert("No olvides ingresar tu clave secreta.");
-    }else{
+    }//else if(offset.value == ""){
+    //     alert("No olvides ingresar tu clave secreta.");
+    // }
+    else{
         lblMsgResult.innerHTML = "Su mensaje cifrado es ";
-        let msgResult = cipher.encode(parseInt(offset.value),txtMsg.value);
+        let msgResult = cipher.encode(parseInt(20),txtMsg.value);
         txtMsgResult.innerHTML = msgResult;
         openModal();
     }
@@ -83,11 +86,12 @@ btnCipher.addEventListener("click",()=>{
 btnDecipher.addEventListener("click",()=>{
     if(txtMsg.value == ""){
         alert("Ingresa tu mensaje secreto.");
-    }else if(offset.value == ""){
-        alert("No olvides ingresar tu clave secreta.");
-    }else{
+    }//else if(offset.value == ""){
+    //     alert("No olvides ingresar tu clave secreta.");
+    // }
+    else{
         lblMsgResult.innerHTML = "Su mensaje descifrado es ";
-        let msgResult = cipher.decode(parseInt(offset.value),txtMsg.value);
+        let msgResult = cipher.decode(parseInt(20),txtMsg.value);
         txtMsgResult.innerHTML = msgResult;
         openModal();
     }
