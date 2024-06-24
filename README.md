@@ -3,7 +3,7 @@
 
 ##Funcionalidades
 - **Cifrado y descifrado:** El usuario puede ingresar un mensaje y seleccionar un desplazamiento específico de caracteres para cifrarlo o descifrarlo.
-- **Generación de QR:**Al hacer clic en un botón, el texto escrito se convierte en un código QR que puede ser escaneado por otros usuarios.
+- **Generación de QR**Al hacer clic en un botón, el texto escrito se convierte en un código QR que puede ser escaneado por otros usuarios.
 - **Registro de usuarios:**
      - En la página principal, se encuentra un formulario-  donde los usuarios pueden registrarse con su apodo.
 	 - Cuando un usuario ingresa su nombre, se captura y almacena.
