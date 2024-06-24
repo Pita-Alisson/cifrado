@@ -48,9 +48,11 @@ document.addEventListener("DOMContentLoaded", function() {
     // }
 
 //Selectors
+const limpiar=document.getElementById("btnlimpiar");
 const txtMsg = document.getElementById("msg");
 const count = document.getElementById("counter");
-
+const botonQr=document.getElementById("btnQr");
+const contenedorqr=document.getElementById("codigo-qr");
 // const offset = document.getElementById('offset');
 const btnCipher = document.getElementById("cipher");
 const btnDecipher = document.getElementById("decipher");
@@ -96,6 +98,28 @@ btnDecipher.addEventListener("click",()=>{
         openModal();
     }
 });
+/*funcion para crear QR*/ 
+botonQr.addEventListener("click",()=>{
+    // const codigoQRDiv = document.getElementById('codigo-qr');
+    // const contenido = txtMsg; // Obtén el contenido del textarea
+     var qrc = new QRCode(contenedorqr,txtMsg.value);
+     contenedorqr.innerHTML.getElementById.value=qrc
+    //      {
+    //     text: contenido,
+    //     width: 128, // Tamaño en píxeles
+    //     height: 128,
+    // });  
+
+});
+//buscar limpiar el qr, para que cambie de qr en cada mensaje nuevo, y tambien que limpie la cajita de texto para que este limpio luego de crear el QR
+
+limpiar.addEventListener("click",()=>{
+  
+    // document.getElementById("codigo-qr").style.display = "none";
+    contenedorqr.innerHTML="";
+    closeModal();
+  });
+
 
 /* Copy cipher or decipher message */
 btnCopy.addEventListener("click",()=>{
@@ -136,4 +160,6 @@ function clearMsg(){
     txtMsg.value = "";
     txtMsg.innerHTML = "";
     count.innerHTML = "0/280";
+
+    // contenedorqr.innerHTML="";
 }

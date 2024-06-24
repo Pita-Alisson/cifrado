@@ -250,7 +250,13 @@ textarea#msgResult:focus-visible{
     cursor: pointer;
     border-radius: 10px;
 }
+/* .contenedorqr{
+    display: flex;
+    justify-content: center;
+    padding: 40px 0;
+    color: #000;
 
+} */
 /* Modal Animation*/
 @keyframes open{
     0%{
