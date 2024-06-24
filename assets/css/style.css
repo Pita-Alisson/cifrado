@@ -32,20 +32,23 @@ header{
     background-color: var(--color-main);
     display:flex;
     align-items:center;
-
-    
+    width: 100%;
+    margin-top: 0;
 }
 
 footer{
     padding: 0.5rem 1rem;
     background-color: var(--color-main);
     text-align: center;
+    width: 100%;
+    margin-bottom: 0;
+
 }
 /* solo de prueba el codigo de html, body */
-html, body {
+/* html, body {
     overflow: hidden;
     height: 100%;
-  }  
+  }   */
 
 h1{
     font-size: 6 rem;
@@ -250,13 +253,13 @@ textarea#msgResult:focus-visible{
     cursor: pointer;
     border-radius: 10px;
 }
-/* .contenedorqr{
+.contenedorqr{
     display: flex;
     justify-content: center;
     padding: 40px 0;
-    color: #000;
+    color: #fb6febcc;
 
-} */
+}
 /* Modal Animation*/
 @keyframes open{
     0%{

@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         if (nickname) {
             // Mostrar un saludo personalizado con el nickname
-            Saludo.textContent = 'Bienvenid@ ' + nickname ;
+            Saludo.textContent = '   Bienvenid@  ' + nickname +'  !!!';
         } else {
             // Redirigir al usuario a la página de registro si no se ha registrado
             window.location.href = '../index.html';
@@ -100,24 +100,24 @@ btnDecipher.addEventListener("click",()=>{
 });
 /*funcion para crear QR*/ 
 botonQr.addEventListener("click",()=>{
-    // const codigoQRDiv = document.getElementById('codigo-qr');
-    // const contenido = txtMsg; // Obtén el contenido del textarea
-     var qrc = new QRCode(contenedorqr,txtMsg.value);
-     contenedorqr.innerHTML.getElementById.value=qrc
-    //      {
-    //     text: contenido,
-    //     width: 128, // Tamaño en píxeles
-    //     height: 128,
-    // });  
+    if(txtMsg.value == ""){
+        alert("Ingresa tu mensaje.");
+     }
+     else{ 
+
+        var qrc = new QRCode(contenedorqr,txtMsg.value);
+        clearMsg();
+        contenedorqr.innerHTML.getElementById.value=qrc;
+        
+
+     }
 
 });
-//buscar limpiar el qr, para que cambie de qr en cada mensaje nuevo, y tambien que limpie la cajita de texto para que este limpio luego de crear el QR
-
+/*limpiar el qr*/
 limpiar.addEventListener("click",()=>{
-  
-    // document.getElementById("codigo-qr").style.display = "none";
-    contenedorqr.innerHTML="";
-    closeModal();
+     contenedorqr.innerHTML="";
+     
+
   });
 
 
@@ -130,7 +130,7 @@ btnCopy.addEventListener("click",()=>{
     }, 100);
 });
 
-/* Modal events*/
+/* eventos de la ventana emergente*/
 close.addEventListener("click",()=>{
     closeModal();
 });
@@ -141,7 +141,7 @@ window.addEventListener("click",(e)=>{
     }
 });
 
-/********Functions */
+/********Funciones */
 function openModal(){
     modalC.classList.remove("containerClose");
     modal.classList.remove("modalClose");
@@ -160,6 +160,9 @@ function clearMsg(){
     txtMsg.value = "";
     txtMsg.innerHTML = "";
     count.innerHTML = "0/280";
-
-    // contenedorqr.innerHTML="";
+    
 }
+
+
+
+
