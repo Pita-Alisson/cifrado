@@ -22,23 +22,23 @@ const cipher = {
     }
   };
   
-  //This function returns the ASCII numeric code of the letter already cipher or descipher: only Uppercase
+  //Esta función devuelve el código numérico ASCII de la letra ya cifrada o descifrada: solo mayúsculas
   function getLetter(letter, offset){
-    //letter is the ASCII numeric code of the letter and offset is a number for displacement
+    //letter es el código numérico ASCII de la letra y offset es un número para el desplazamiento
     let idLetter = letterValidate(letter);
     let quantityLetter = 26;
-    // cipher or decipher special characters
+    // cifrar o descifrar caracteres especiales
     if(idLetter === 0){ return letter;}
-    // cipher or decipher numbers
+    // cifrar o descifrar números
     if(idLetter === 48){ quantityLetter = 10;}
-    //cipher or decipher Uppercase, Lowercase, Numbers
+    //cifrar o descifrar mayúsculas, minúsculas, números
     let position = (letter - idLetter + offset) % quantityLetter;
     if(position < 0){ position = quantityLetter + position;}
     return (position + idLetter);
   }
   
   function letterValidate(letter){
-    //Validator of Uppercase, Lowercase, Numbers or special characters
+    //Validador de mayúsculas, minúsculas, números o caracteres especiales
     let idLetter = 0; //Number of initial position in ASSCI
     if(letter >=65 && letter<=90){ idLetter = 65;} // Uppercase
     if(letter >=97 && letter<=122){ idLetter = 97;} // Lowercase

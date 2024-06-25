@@ -64,18 +64,16 @@ const modal = document.getElementsByClassName("modal")[0];
 const close = document.getElementById("close");
 
 //EventListeners
-/* Limit characters*/
+/******Limit characters******/
 txtMsg.addEventListener("keyup", () =>{
     count.innerHTML = txtMsg.value.length + "/280";
 });
 
-/* Function cipher*/
+/*******Function cifrado*****/
 btnCipher.addEventListener("click",()=>{
     if(txtMsg.value == ""){
         alert("Ingresa tu mensaje secreto.");
-    }//else if(offset.value == ""){
-    //     alert("No olvides ingresar tu clave secreta.");
-    // }
+    }
     else{
         lblMsgResult.innerHTML = "Su mensaje cifrado es ";
         let msgResult = cipher.encode(parseInt(20),txtMsg.value);
@@ -84,13 +82,11 @@ btnCipher.addEventListener("click",()=>{
     }
 });
 
-/*Function decipher*/
+/******Funcion decifrar*******/
 btnDecipher.addEventListener("click",()=>{
     if(txtMsg.value == ""){
         alert("Ingresa tu mensaje secreto.");
-    }//else if(offset.value == ""){
-    //     alert("No olvides ingresar tu clave secreta.");
-    // }
+    }
     else{
         lblMsgResult.innerHTML = "Su mensaje descifrado es ";
         let msgResult = cipher.decode(parseInt(20),txtMsg.value);
@@ -98,7 +94,7 @@ btnDecipher.addEventListener("click",()=>{
         openModal();
     }
 });
-/*funcion para crear QR*/ 
+/******funcion para crear QR********/ 
 botonQr.addEventListener("click",()=>{
     if(txtMsg.value == ""){
         alert("Ingresa tu mensaje.");
@@ -113,15 +109,14 @@ botonQr.addEventListener("click",()=>{
      }
 
 });
-/*limpiar el qr*/
+/******limpiar el qr******/
 limpiar.addEventListener("click",()=>{
      contenedorqr.innerHTML="";
-     
 
   });
 
 
-/* Copy cipher or decipher message */
+/***** * Copiar mensaje cifrado o decifrado****** */
 btnCopy.addEventListener("click",()=>{
     txtMsgResult.select();
     document.execCommand("copy");
@@ -130,7 +125,7 @@ btnCopy.addEventListener("click",()=>{
     }, 100);
 });
 
-/* eventos de la ventana emergente*/
+/*********** eventos de la ventana emergente***********/
 close.addEventListener("click",()=>{
     closeModal();
 });
@@ -141,7 +136,7 @@ window.addEventListener("click",(e)=>{
     }
 });
 
-/********Funciones */
+/********Funciones extras para el manejo de limpiar datos ***********/
 function openModal(){
     modalC.classList.remove("containerClose");
     modal.classList.remove("modalClose");
